@@ -42,6 +42,25 @@ elf.pull_lever(b.concat(elf.get_lever(0)))
 elf.moveLeft(8)
 elf.moveUp(1000)
 
+1. printenv to look at environment variables
+
+1. look thorughout the directories
+elf@ff8f3b938c80:~/workshop$ grep -i -R "munchkin" ./
+./toolbox_191.txt:mUnChKin.4056180441832623
+
+1. creating symbollic link
+$ ln -s ./fuse0 ./fuse1
+
+1.  find ./ -group munchkin finding file by group
+
+1. find /some/directory -size +5k -size -10k
+
+1. regex101 for regex related questions  
+\b([a-fA-F0-9]{2}-){5}[a-fA-F0-9]{2}\b
+d3-a3-44-d3-d3-d3
+
+1. uncompress
+
 
 
 
