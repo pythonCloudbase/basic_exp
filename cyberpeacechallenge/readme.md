@@ -222,5 +222,144 @@ Welcome to the Hacking-Lab BluRay Database!
 4) Print BluRay
 5) Exit
 
+Unicorn decoder
+follow the tls schem:
 
+Hi Bob
+Hey Alice
+See? I told you this would work!
+Wow, this is so cool! Now we can finally chat directly from our PCs.
+This feels almost like the future!
+So what about the secret message you wanted to send me?
+Oh yeah, about that. It's weird. I don't understand it. But here we go: IldvcnN0LiBD
+Wait! We should be careful. Eve is monitoring the network traffic here.
+True. I heard of that cool new thing called Transport Layer Security. I think openssl can help us with that and everything will be secure!
+Okay, let's do it then. Contact me using openssl on port 7134.
+
+
+Hey again!
+Okay, now that eve will not be able to listen to us, here is the next part of the message: aGFsbGVuZ2Uu
+Hmm. I'm getting a weird thing about NULL ciphers and no certificate here. openssl tells me this is not actually secure... Maybe we should try again?
+Yeah, but this time I'll be the server.
+Sure thing. Where can I reach you?
+Wait, it seems like I have to generate a certificate first. Did you ever do this?
+No, sorry, but I'm sure you can figure it out by randomly running some commands you find on the internet.
+That sounds like a great idea! I'll do that!
+Okay, got it working. This is my certificate information so you can verify it when connecting:
+ % openssl rsa -in key -noout -text
+modulus:
+    00:bf:b6:3b:92:7b:34:02:1a:b2:8d:c3:5a:fd:70:
+    09:e5:d6:a5:71:f6:b4:5c:a1:93:b2:aa:61:20:73:
+    eb:ff:3b:25:65:d8:d0:00:a2:e4:43:41:47:08:78:
+    07:60:ae:9e:64:f7:ef:6b:5d:9d:08:40:18:2d:c5:
+    05:9a:99:55:54:3d:f4:11:b2:0f:1a:7f:a1:67:18:
+    14:19:e8:3f:b4:39:9e:66:0a:3d:cf:5b:79:dc:a6:
+    ff:31:3d:bf:ed:42:66:6e:5b:5f:29:77:e1:67:ce:
+    7f:46:68:a7:3e:2d:c6:ce:6f:3e:d2:66:9b:2e:7b:
+    90:83:f9:84:f0:b1:d7:70:a2:6e:72:a5:35:12:68:
+    28:ba:1a:7b:31:ec:ae:37:38:d4:c9:86:41:33:7a:
+    b9:5c:99:7c:ec:8c:bc:8c:8c:e3:39:a0:ca:7a:0b:
+    88:06:b9:20:1f:8c:78:05:cd:a9:fa:80:21:84:f6:
+    07:8f:bd:1c:3d:2c:63:d9:be:58:d0:68:71:ce:a6:
+    e6:88:5d:8e:c7:22:fa:ec:5a:87:82:05:f7:10:64:
+    4a:e9:ad:dc:18:77:8f:b1:d4:b0:78:38:52:76:0f:
+    31:8c:27:41:87:87:8f:0c:1b:e5:b9:e1:53:43:b1:
+    b4:a3:b7:1f:0f:44:56:26:71:09:2e:37:3a:1b:1b:
+    da:37
+publicExponent: 65537 (0x10001)
+privateExponent:
+    12:46:25:a1:8d:da:e4:44:75:36:ac:23:75:3b:03:
+    c6:83:d2:5b:6d:9f:bd:a0:ad:3a:7f:a1:28:7d:c4:
+    46:1c:f6:30:a2:1d:19:a2:6d:4d:b7:e0:34:7f:74:
+    7c:93:c8:87:69:56:ca:0e:2f:54:c4:ff:49:05:99:
+    c6:25:cd:8b:6d:28:61:b3:6e:5b:21:45:5a:55:62:
+    3d:21:f5:48:91:a1:76:aa:8d:3f:c1:c1:78:f5:f6:
+    27:54:72:82:04:2d:4d:61:aa:4d:82:9e:da:cd:45:
+    36:89:ed:3f:31:0f:dd:47:9f:5e:60:e7:73:e3:d5:
+    5f:af:1e:2b:ef:57:d0:e5:90:6b:f1:55:91:a5:f5:
+    6d:43:d7:d8:22:f3:9c:04:d5:94:d1:cc:0d:14:fd:
+    05:33:ba:b1:d6:35:cf:84:39:9d:f9:ab:78:5f:f2:
+    0e:a7:ed:25:b7:a5:6c:32:9a:ee:e2:c9:82:7f:58:
+    ea:23:c1:f0:79:9c:7c:15:b6:68:b6:43:23:36:06:
+    ef:6a:a8:2f:6c:35:9c:21:72:0b:a7:c5:32:bc:6a:
+    eb:08:08:db:e4:92:78:af:18:0f:84:fc:bb:68:61:
+    68:33:b5:67:11:f0:5f:9d:7f:d5:ca:0c:6d:b1:33:
+    76:53:c8:80:1c:73:79:8d:59:e9:78:d1:69:fe:e6:
+    89
+prime1:
+    00:f1:58:ad:b8:e3:58:18:f9:9a:ab:4b:2d:39:c2:
+    ba:f0:78:dc:7c:65:27:fc:60:e5:f8:26:86:88:11:
+    70:05:4f:44:f7:c8:c8:c3:21:1c:90:be:25:2d:0b:
+    4d:f0:84:5d:8c:69:47:0f:22:db:1d:e3:96:79:ca:
+    df:1e:39:e3:51:56:5a:b6:4c:c6:36:c7:cf:06:d6:
+    30:36:85:ce:91:0e:86:6f:d9:5a:94:37:ab:25:7f:
+    bb:69:88:09:af:6e:66:8c:ff:65:7f:d7:7c:56:3a:
+    00:69:66:9d:53:fb:d1:f4:a3:ab:42:57:d2:75:46:
+    9e:7e:ad:95:d2:9b:78:0a:a3
+prime2:
+    00:cb:5a:11:a6:6f:41:9a:56:05:e4:a3:4d:bf:29:
+    85:92:49:b8:da:c6:a8:8b:a2:c9:1e:81:8d:15:63:
+    77:4d:b3:25:b6:2b:33:03:e6:25:1c:c6:62:c7:85:
+    aa:2c:8d:a0:be:1d:fb:f4:4e:b1:b7:5d:16:58:a2:
+    3a:0f:80:3d:95:1e:a0:99:bc:bc:1e:6a:ec:a4:72:
+    fb:63:2d:12:5b:dd:54:18:a3:47:c5:1d:6e:45:04:
+    42:a2:d4:99:d4:4f:f1:39:b1:24:5e:b0:9a:82:7a:
+    be:71:7e:aa:f8:5d:a6:3f:cb:4b:a2:33:b2:7a:b6:
+    3c:35:65:1a:6c:03:94:df:5d
+exponent1:
+    03:fa:2a:22:b9:dc:61:cc:fb:37:87:6d:9f:5e:0e:
+    26:98:57:49:d5:80:eb:2f:cd:9a:61:48:26:45:e3:
+    4a:b3:1b:b7:d9:9f:35:57:fe:58:84:49:a8:8c:5f:
+    24:6f:89:fb:1e:61:05:66:d5:a5:90:72:92:5f:3d:
+    7e:0a:06:2c:f8:f7:55:b9:be:2a:78:f0:78:74:5f:
+    27:06:dd:78:96:7c:b0:ab:2c:4a:f4:ff:e5:06:4d:
+    d8:57:5d:91:7e:88:42:1a:93:59:9f:fb:74:90:50:
+    21:6c:87:7b:32:d3:2a:ec:e7:8d:98:54:e7:89:da:
+    62:cc:09:84:06:fb:db:71
+exponent2:
+    00:94:eb:1e:e5:dd:b0:13:50:4f:fc:82:43:1b:6d:
+    52:ee:30:a2:f9:44:66:85:eb:ee:91:32:9a:99:41:
+    40:4b:5c:98:8f:71:cf:68:59:90:70:24:30:8e:a1:
+    2a:60:7a:4f:6f:2b:12:2a:75:be:db:e3:85:cb:de:
+    f1:da:0c:36:0d:10:62:d8:73:48:e8:95:b1:3b:35:
+    21:38:1d:f7:c5:e2:ae:05:64:fd:d8:32:97:60:5f:
+    a0:55:12:90:9c:d4:f6:79:23:6a:d9:15:47:f1:a9:
+    e5:f1:c3:ab:7d:3b:47:d6:8c:10:95:76:7a:8c:37:
+    0c:9c:a5:af:d5:ce:41:a5:d9
+coefficient:
+    4b:58:ea:3b:de:5a:e3:03:f5:8d:9b:c1:f2:dc:34:
+    a0:16:77:e7:41:ea:db:00:85:19:ef:17:3d:93:ad:
+    45:12:6f:48:e0:03:a8:c4:b0:ef:1a:eb:48:8e:0f:
+    39:2d:70:e6:34:d1:bb:88:93:d0:0a:05:a1:c8:8b:
+    38:f0:e3:39:df:0c:ea:fb:02:a4:80:3a:5f:e1:d0:
+    1e:c3:b4:22:9c:4b:b2:c7:69:5c:57:63:4c:b3:68:
+    de:95:f8:9d:41:37:f4:8c:f3:5d:5c:f1:7b:3b:8f:
+    4b:73:e4:6b:e3:55:76:9d:c3:22:f1:88:68:53:69:
+    83:d2:95:71:99:3a:ed:64I'll be on port 1234!
+Thanks, I'll connect in a second.
+
+emoji cipher:
+https://unicode.org/emoji/charts/full-emoji-list.html
+
+https://emoji-cypher.netlify.app/
+
+A = 205	U+1F441	👁	👁	👁	👁	👁	👁	👁	👁	—	—	—	—	eye
+
+B = U+1F442	👂	👂	👂	👂	👂	👂	👂	👂	👂	👂	👂	👂	ear
+
+C = U+1F443	👃	👃	👃	👃	👃	👃	👃	👃	👃	👃	—	👃	nose
+
+1 = U+1F431	🐱	🐱	🐱	🐱	🐱	🐱	🐱	🐱	🐱	🐱	🐱	🐱	cat face
+
+0 = U+1F430	🐰	🐰	🐰	🐰	🐰	🐰	🐰	🐰	🐰	🐰	—	🐰	rabbit face
+
+" "- U+1F420	🐠	🐠	🐠	🐠	🐠	🐠	🐠	🐠	🐠	🐠	—	🐠	tropical fish
+
+++++++++++++++++++++++++++++++++++++
+
+U+1F62F	😯	😯	😯	😯	😯	😯	😯	😯	—	—	—	—	hushed face
+
+U+1F603	😃	😃	😃	😃	😃	😃	😃	😃	😃	😃	😃	😃	grinning face with big eyes
+
+U+1F689	🚉	🚉	🚉	🚉	🚉	🚉	🚉	🚉	🚉	🚉	—	🚉	station
 

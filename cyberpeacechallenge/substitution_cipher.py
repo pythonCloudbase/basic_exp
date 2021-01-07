@@ -1,6 +1,8 @@
-file1 = open("cipherText.txt")
+file1 = open("cipherText.txt", encoding='utf-8') 
 
 fullList = []
+
+print(file1.readlines())
 
 for i in file1.readlines():
     for j in i:
@@ -25,7 +27,7 @@ print(uniqueList, len(uniqueList))
 
 uniqueList.remove(10)
 
-print('here: ', 128587 in uniqueList)
+#print('here: ', 128587 in uniqueList)
 
 #print(uniqueList, len(uniqueList))
 
@@ -39,6 +41,13 @@ dictEmoji = {}
 for i, element in zip(uniqueCharlist, uniqueList):
     print(i, " : ", chr(element))
     dictEmoji[element]  = i
+
+dictHex = {}
+
+for i in uniqueList:
+    print(i, " : ", Hex(i))
+    dictHex[i]  = Hex(i)
+
 
 # handling \n
 dictEmoji[10] = '.'
