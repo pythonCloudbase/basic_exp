@@ -363,3 +363,10 @@ U+1F603	😃	😃	😃	😃	😃	😃	😃	😃	😃	😃	😃	😃	grinning fac
 
 U+1F689	🚉	🚉	🚉	🚉	🚉	🚉	🚉	🚉	🚉	🚉	—	🚉	station
 
+
+graphql 
+https://the-bilal-rizwan.medium.com/graphql-common-vulnerabilities-how-to-exploit-them-464f9fdce696
+
+![](graphql.png)
+
+
