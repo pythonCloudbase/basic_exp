@@ -369,4 +369,214 @@ https://the-bilal-rizwan.medium.com/graphql-common-vulnerabilities-how-to-exploi
 
 ![](graphql.png)
 
+schema types
+
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "AppSchema"
+        },
+        {
+          "name": "String"
+        },
+        {
+          "name": "UserType"
+        },
+        {
+          "name": "PostType"
+        },
+        {
+          "name": "Int"
+        },
+        {
+          "name": "__Schema"
+        },
+        {
+          "name": "__Type"
+        },
+        {
+          "name": "__TypeKind"
+        },
+        {
+          "name": "Boolean"
+        },
+        {
+          "name": "__Field"
+        },
+        {
+          "name": "__InputValue"
+        },
+        {
+          "name": "__EnumValue"
+        },
+        {
+          "name": "__Directive"
+        },
+        {
+          "name": "__DirectiveLocation"
+        }
+      ]
+    }
+  }
+}
+
+Query:
+{
+  __type(name: "PostType") {
+    name
+    fields {
+      name
+      type {
+        name
+        kind
+      }
+    }
+  }
+}
+
+App schema : 
+{
+  "data": {
+    "__type": {
+      "name": "AppSchema",
+      "fields": [
+        {
+          "name": "user",
+          "type": {
+            "name": "UserType",
+            "kind": "OBJECT"
+          }
+        },
+        {
+          "name": "users",
+          "type": {
+            "name": null,
+            "kind": "LIST"
+          }
+        },
+        {
+          "name": "post",
+          "type": {
+            "name": "PostType",
+            "kind": "OBJECT"
+          }
+        },
+        {
+          "name": "posts",
+          "type": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      ]
+    }
+  }
+}
+
+{
+  "data": {
+    "__type": {
+      "name": "UserType",
+      "fields": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "name",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "email",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "posts",
+          "type": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      ]
+    }
+  }
+}
+
+{
+  "data": {
+    "__type": {
+      "name": "PostType",
+      "fields": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "title",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "body",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "user",
+          "type": {
+            "name": "UserType",
+            "kind": "OBJECT"
+          }
+        }
+      ]
+    }
+  }
+}
+
+Available queries:
+
+{
+  "data": {
+    "__schema": {
+      "queryType": {
+        "fields": [
+          {
+            "name": "user",
+            "description": "List all users."
+          },
+          {
+            "name": "users",
+            "description": "Returns all users"
+          },
+          {
+            "name": "post",
+            "description": "Returns a post by ID"
+          },
+          {
+            "name": "posts",
+            "description": "Returns list of posts"
+          }
+        ]
+      }
+    }
+  }
+}
 
