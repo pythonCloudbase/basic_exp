@@ -7,12 +7,12 @@ for i in file1.readlines():
         #print(ord(j))
         fullList.append(ord(j))
 
-print(chr(128))
+# print(chr(128))
 
-for i in fullList:
-    new = int(i%128000 -480)
-    if(new >0):
-        print(new, " - ", chr(new))
+# for i in fullList:
+#     # new = int(i%128000 -480)
+#     if(new >0):
+#         print(new, " - ", chr(new))
 
 
 #print(uniqueList)
@@ -24,12 +24,14 @@ print(128587 in uniqueList)
 print(uniqueList, len(uniqueList))
 
 uniqueList.remove(10)
+#fullList.remove(10)
 
-print('here: ', 128587 in uniqueList)
+# print('here: ', 128587 in uniqueList)
 
 #print(uniqueList, len(uniqueList))
 
-uniqueCharlist = [chr(x) for x in range(65, 119)]
+#uniqueCharlist = [chr(x) for x in range(65, 119)]
+uniqueCharlist = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz."
 #uniqueCharlist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=}[]:\"';<>?/,{"
 
 print(len(uniqueCharlist), len(uniqueList))
@@ -41,7 +43,7 @@ for i, element in zip(uniqueCharlist, uniqueList):
     dictEmoji[element]  = i
 
 # handling \n
-dictEmoji[10] = '.'
+dictEmoji[10] = '\n'
 
 print(fullList)
 
@@ -51,6 +53,8 @@ convertedText = ""
 #print(128587 in dictEmoji.keys())
 
 #print(128587 in fullList)
+
+
 
 for i in fullList:
     convertedText += dictEmoji[i]

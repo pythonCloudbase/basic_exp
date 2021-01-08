@@ -222,5 +222,14 @@ Welcome to the Hacking-Lab BluRay Database!
 4) Print BluRay
 5) Exit
 
+Lucky Luke
+HL{joe_jack_williamwilliam_Averell} 
+vns6cbs
 
+Common name in an ssl certificate
+
+
+openssl req -new -x509 -sha256 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -days 3650 -subj "/C=US/ST=NY/L=New York/O=Foo Corp/OU=Bar Div/CN="10.10.6.13 \
+
+https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 
