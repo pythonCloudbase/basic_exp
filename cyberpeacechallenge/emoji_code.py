@@ -8,8 +8,9 @@ fullList = []
 outputstr = ""
 for i in file1.readlines():
     for j in i:
-        em = (ord(j[-3:])%128000)%128
-        #print(em, " : " , j, " : ", chr(em))
+        # em = (ord(j[-3:])%128000)%128
+        em = ord(j[-3:])
+        print(em, " : " , hex(ord(j)), " : ", chr(em), " : ", type(j)) 
         #em+=64
         outputstr += chr(em)
         fullList.append(em)
