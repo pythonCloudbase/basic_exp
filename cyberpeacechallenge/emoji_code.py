@@ -1,26 +1,20 @@
-import emoji
 
-file1 = open("cipherText.txt", encoding='utf-8') 
+file1 = open("cipherText.txt") 
 
 fullList = []
 
 # print(file1.readlines())
 
+outputstr = ""
 for i in file1.readlines():
     for j in i:
-        print(hex(ord(j)))
-        fullList.append(hex(ord((j))))
-fullList.sort()
-print(fullList)
+        em = (ord(j[-3:])%128000)%128
+        #print(em, " : " , j, " : ", chr(em))
+        #em+=64
+        outputstr += chr(em)
+        fullList.append(em)
+#fullList.sort()
+print(outputstr)
 
-print("max", max(fullList))
-print("min", min(fullList))
-
-freqList ={}
-
-for i in fullList:
-    if(!f[i]0)
-
-
-# print()
-# print(emoji.demojize("😯"))
+#print("max", max(fullList))
+#print("min", min(fullList))

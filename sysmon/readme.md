@@ -4,7 +4,7 @@ Activation and download - https://docs.microsoft.com/en-us/sysinternals/download
 
 config file - https://github.com/SwiftOnSecurity/sysmon-config/edit/master/sysmonconfig-export.xml
 
-cmd line -  `sysmon -accepteula -i sysmon_config.xml`
+cmd line -  `sysmon -accepteula -i sysmon-config.xml`
 
 ![](sysmon.png)
 
