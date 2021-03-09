@@ -47,8 +47,8 @@ for i, element in zip(uniqueCharlist, uniqueList):
 dictHex = {}
 
 for i in uniqueList:
-    print(i, " : ", Hex(i))
-    dictHex[i]  = Hex(i)
+    print(i, " : ", hex(i))
+    dictHex[i]  = hex(i)
 
 
 # handling \n
