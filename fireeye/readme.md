@@ -227,3 +227,103 @@ practical malware analysis tool book
 
 do in malware labs
 shady rabbit 32
+
+# Basic Dynamic analysis
+
+### Malware sandboxes
+
+cuckoo
+THreattrack
+FireEye
+buster sandbox
+
+sanbox only captures a subset of available codes
+cannot support all file types
+
+Virtualisation
+
+### procmon
+1. process create
+2. writefile
+3. Regsetvalue
+4. set disposition information
+
+file close on delete
+
+### Virtual Machone Usage 
+Ensure that the network adapters are set to host only and cannot reach 
+internet 
+Disable shared folders
+Disable unity integration features
+Revert the VM to clean snapshot
+
+Handling Malware
+Avoid storing raw malware on host
+drag and drop zipped files
+
+### system Monitoring Tools
+
+1Process Exploreer.exe
+Procmon
+
+Network Monitoring tools
+Fakenet-NG
+simulates common internet protocols and services
+Wireshark
+
+### aunching binaries
+Exes - executing from administrator command promt
+
+DLLs -  rundll32.exe dll_name dll_export
+        rundll32.exe dll_name #ordinal
+
+Service DLLs
+    Modify an existing Windows service entry or create a dummy service
+    SYSTEM\CurrentControlSet\Services\AppMgmt\Parameters\ServiceDLL
+    Malware Analysts cookbook - install_svc.bat and install_svc.py
+
+### Dumping Memory
+    Dynamic Analysis also increased static analysis capabiltiy
+    encoded strings 
+    packing
+
+Difficult to overcome using Static Analysis
+    A common technique is to let th emalware do the work , then dump the decoded and unpacked data to disk
+
+
+Process dump extract PE files from a process in memory and dumps them to disk
+
+run a packed sample
+suspend memory
+dump memory
+Analyse unpacked sample
+
+Process dumped advanced tricks
+dump any process as it exits
+    pd64.exe -closemon
+dump any ynrecogmnised module
+    first generate a whitelist 
+    pd64.exe -db -genquick
+Launch a malware
+Dump all modules not matching th egenerated whitelist
+    pd64.exe system
+
+
+## Dynamic Analysis Workflow
+
+1. connect the network adapter in host only mode
+2. Start the Process Monitor and set filters accordingly
+3. Start the process explorer
+4. start fakenet-NG and test connectivity
+5. statr any other tools
+6. create a snapshot
+7. launch binary
+
+
+
+page 73
+
+fakenet ng 
+
+rundll32.exe for running a dll in windows
+
