@@ -319,11 +319,160 @@ Dump all modules not matching th egenerated whitelist
 6. create a snapshot
 7. launch binary
 
-
-
 page 73
 
 fakenet ng 
 
 rundll32.exe for running a dll in windows
+
+# Disassembly
+
+for making definitive statemnets about malware capabilities.
+
+Assembly
+
+Highest level language that can be reliabily recover from machine code
+
+Dissembly 
+
+for creating the disassembly
+
+Decompilation 
+
+converting binary to source code
+
+Ghidra - for decompilation
+
+produces best guess of a decompiler is 
+
+.c ->compiler-> .asm ->assembler-> .obj file->linker-> .exe
+
+.exe -> disassembly-> assembly listing-> decompiler-> source code
+
+32 bit architecture
+    used by 32 bit PCs 
+    and 64 bit malware
+
+Disassembly
+
+memory
+    virtual memory
+        given by os
+    cpu registers
+        fastest memory possible
+
+EAX EBX ECX EDX
+EBP ESP ESI EDI
+
+EFLAGS
+EIP
+
+EAX - 32 bit register
+4 butes
+
+can be devided into AX =  AH + AL
+which is 2 bytes
+
+X86 reverse document cheatsheet
+EAX is used to store the return value
+ESP is stack pointer 
+EBP is Base pointer
+EIP  is the current executing instruction
+
+Opcode
+is the numerical representation of instruction
+
+5 byte instruction
+
+mnemonic destination operand  source operand
+
+0x41 or 41h
+
+operands -
+ immediate - -123
+  register - eax
+   memory -  []
+
+Brackets mean memory address
+except for LEA
+
+Amount of memory to read or write is based on size of non memory operand
+
+if memory defrence is used then we need to mention the size 
+
+through DWORD PTR , WORD PTR
+
+dword is a windows datatype that is 4 bytes long
+
+LEA eax, [ebx+8]
+
+LEA is used do mathematic
+Load effective address to prepare a pointer
+
+INC and DEC
+
+ADD and SUB
+
+AND/ OR / XOR
+
+SHL
+SHR
+ROL
+ROR
+
+XOR
+- anything xor with 0 will be that number iteseld
+- andyhting xored with itself is 0
+
+Stack short term storage
+ESp register
+PUSH, POP, CALL and RET instructions
+
+lPUSH and POP
+
+pop eax 
+
+top of stack went ot eax
+
+Call and ret
+
+call is equivalent ot 
+
+push 401005 # return address
+jmp some_function
+test eax, eax
+
+ret popos eip and puts it on eip
+
+return 8 
+return and add 8 to stack pointer
+
+add esp to 8
+
+sub
+
+return value in eax
+
+HOw stack looks like
+
+local variables
+new base pointer
+old base pointer
+return address
+function parameters
+
+0 flag set means result was 0
+
+cmp to evaluate branch conditions
+cmp is a substraction
+if cmp is true then zero flag will be set
+
+TEST is a logical and function
+if test is true then zero flag will not be set
+
+zero flag would be set everytime we have a zero as result of an operation
+
+differnt jump operations page 142
+
+
 
