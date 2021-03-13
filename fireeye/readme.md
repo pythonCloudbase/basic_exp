@@ -227,3 +227,252 @@ practical malware analysis tool book
 
 do in malware labs
 shady rabbit 32
+
+# Basic Dynamic analysis
+
+### Malware sandboxes
+
+cuckoo
+THreattrack
+FireEye
+buster sandbox
+
+sanbox only captures a subset of available codes
+cannot support all file types
+
+Virtualisation
+
+### procmon
+1. process create
+2. writefile
+3. Regsetvalue
+4. set disposition information
+
+file close on delete
+
+### Virtual Machone Usage 
+Ensure that the network adapters are set to host only and cannot reach 
+internet 
+Disable shared folders
+Disable unity integration features
+Revert the VM to clean snapshot
+
+Handling Malware
+Avoid storing raw malware on host
+drag and drop zipped files
+
+### system Monitoring Tools
+
+1Process Exploreer.exe
+Procmon
+
+Network Monitoring tools
+Fakenet-NG
+simulates common internet protocols and services
+Wireshark
+
+### aunching binaries
+Exes - executing from administrator command promt
+
+DLLs -  rundll32.exe dll_name dll_export
+        rundll32.exe dll_name #ordinal
+
+Service DLLs
+    Modify an existing Windows service entry or create a dummy service
+    SYSTEM\CurrentControlSet\Services\AppMgmt\Parameters\ServiceDLL
+    Malware Analysts cookbook - install_svc.bat and install_svc.py
+
+### Dumping Memory
+    Dynamic Analysis also increased static analysis capabiltiy
+    encoded strings 
+    packing
+
+Difficult to overcome using Static Analysis
+    A common technique is to let th emalware do the work , then dump the decoded and unpacked data to disk
+
+
+Process dump extract PE files from a process in memory and dumps them to disk
+
+run a packed sample
+suspend memory
+dump memory
+Analyse unpacked sample
+
+Process dumped advanced tricks
+dump any process as it exits
+    pd64.exe -closemon
+dump any ynrecogmnised module
+    first generate a whitelist 
+    pd64.exe -db -genquick
+Launch a malware
+Dump all modules not matching th egenerated whitelist
+    pd64.exe system
+
+
+## Dynamic Analysis Workflow
+
+1. connect the network adapter in host only mode
+2. Start the Process Monitor and set filters accordingly
+3. Start the process explorer
+4. start fakenet-NG and test connectivity
+5. statr any other tools
+6. create a snapshot
+7. launch binary
+
+page 73
+
+fakenet ng 
+
+rundll32.exe for running a dll in windows
+
+# Disassembly
+
+for making definitive statemnets about malware capabilities.
+
+Assembly
+
+Highest level language that can be reliabily recover from machine code
+
+Dissembly 
+
+for creating the disassembly
+
+Decompilation 
+
+converting binary to source code
+
+Ghidra - for decompilation
+
+produces best guess of a decompiler is 
+
+.c ->compiler-> .asm ->assembler-> .obj file->linker-> .exe
+
+.exe -> disassembly-> assembly listing-> decompiler-> source code
+
+32 bit architecture
+    used by 32 bit PCs 
+    and 64 bit malware
+
+Disassembly
+
+memory
+    virtual memory
+        given by os
+    cpu registers
+        fastest memory possible
+
+EAX EBX ECX EDX
+EBP ESP ESI EDI
+
+EFLAGS
+EIP
+
+EAX - 32 bit register
+4 butes
+
+can be devided into AX =  AH + AL
+which is 2 bytes
+
+X86 reverse document cheatsheet
+EAX is used to store the return value
+ESP is stack pointer 
+EBP is Base pointer
+EIP  is the current executing instruction
+
+Opcode
+is the numerical representation of instruction
+
+5 byte instruction
+
+mnemonic destination operand  source operand
+
+0x41 or 41h
+
+operands -
+ immediate - -123
+  register - eax
+   memory -  []
+
+Brackets mean memory address
+except for LEA
+
+Amount of memory to read or write is based on size of non memory operand
+
+if memory defrence is used then we need to mention the size 
+
+through DWORD PTR , WORD PTR
+
+dword is a windows datatype that is 4 bytes long
+
+LEA eax, [ebx+8]
+
+LEA is used do mathematic
+Load effective address to prepare a pointer
+
+INC and DEC
+
+ADD and SUB
+
+AND/ OR / XOR
+
+SHL
+SHR
+ROL
+ROR
+
+XOR
+- anything xor with 0 will be that number iteseld
+- andyhting xored with itself is 0
+
+Stack short term storage
+ESp register
+PUSH, POP, CALL and RET instructions
+
+lPUSH and POP
+
+pop eax 
+
+top of stack went ot eax
+
+Call and ret
+
+call is equivalent ot 
+
+push 401005 # return address
+jmp some_function
+test eax, eax
+
+ret popos eip and puts it on eip
+
+return 8 
+return and add 8 to stack pointer
+
+add esp to 8
+
+sub
+
+return value in eax
+
+HOw stack looks like
+
+local variables
+new base pointer
+old base pointer
+return address
+function parameters
+
+0 flag set means result was 0
+
+cmp to evaluate branch conditions
+cmp is a substraction
+if cmp is true then zero flag will be set
+
+TEST is a logical and function
+if test is true then zero flag will not be set
+
+zero flag would be set everytime we have a zero as result of an operation
+
+differnt jump operations page 142
+
+
+
